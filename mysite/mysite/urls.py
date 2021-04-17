@@ -19,5 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     #whenever someone comes to the homepage, they get redirected to 'main.urls'
     path('',include('main.urls')),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('tinymce/',include('tinymce.urls')),
 ]
