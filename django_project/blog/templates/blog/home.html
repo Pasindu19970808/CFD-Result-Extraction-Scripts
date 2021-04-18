@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1 style="color: rgb(60, 60, 209);">Blog Home!</h1>
+{% extends "blog/base.html" %}
+
+{% block content %}
+    
     <!-- <div style="display: inline; float: right;"> 
         <ul>
             <li style="display: inline;">
@@ -18,5 +12,12 @@
             </li>
         </ul>
     </div> -->
-</body>
-</html>
+    <!-- Opening up a code block -->
+
+    {% for post in posts %}
+        <h1>{{post.title}}</h1>
+        <p>By : {{post.author}} on {{post.date_posted}}</p>
+        <p>{{ post.content}}</p>
+    {% endfor %}
+
+{% endblock content %}
